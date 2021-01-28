@@ -3,9 +3,9 @@ package controllers.toppage;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.persistence.EntityManager;
-import javax.persistence.TemporalType;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Post;
 import models.User;
 import utils.DBUtil;
 
@@ -40,6 +41,23 @@ public class TopPageIndexServlet extends HttpServlet {
 
         User login_user = (User)request.getSession().getAttribute("login_user");
 
+        int page;
+        try{
+            page = Integer.parseInt(request.getParameter("page"));
+        } catch(Exception e) {
+            page = 1;
+        }
+
+        List<Post> posts = em.createNamedQuery("getMyAllPosts", Post.class)
+                .setParameter("user", login_user)
+                .setFirstResult(15 * (page - 1))
+                .setMaxResults(15)
+               .getResultList();
+
+        long posts_count = (long)em.createNamedQuery("getMyReportsCount", Long.class)
+                     .setParameter("user", login_user)
+                     .getSingleResult();
+
         // 今日の日付
         Date dt = new Date(System.currentTimeMillis());
 
@@ -50,27 +68,10 @@ public class TopPageIndexServlet extends HttpServlet {
         cd.add(Calendar.MONTH, -1);
         dt2 = cd.getTime();
 
-        int page;
-        try{
-            page = Integer.parseInt(request.getParameter("page"));
-        } catch(Exception e) {
-            page = 1;
-        }
-
-        try {
-            long dates = (long)em.createNamedQuery("getMonth", Long.class)
-                                .setParameter("user", login_user)
-                                .setParameter("today", dt, TemporalType.DATE)
-                                .setParameter("thirty", dt2, TemporalType.DATE)
-                                .getSingleResult();
-            request.setAttribute("d", dates);
-        }catch(Exception e) {
-            request.setAttribute("d", 0);
-        }
-
-
         em.close();
 
+        request.setAttribute("posts_count", posts_count);
+        request.setAttribute("posts", posts);
         request.setAttribute("page", page);
         request.setAttribute("date", dt);
 
