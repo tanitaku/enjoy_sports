@@ -4,7 +4,7 @@
 <html lang="ja">
     <head>
         <meta charset="UTF-8">
-        <title>マイクローゼット</title>
+        <title>Enjoy Sport!</title>
         <link rel="stylesheet" href="<c:url value='/css/reset.css' />">
         <link rel="stylesheet" href="<c:url value='/css/style.css' />">
     </head>
@@ -12,12 +12,11 @@
         <div id="wrapper">
             <div id="header">
                 <div id="header_menu">
-                    <h1><a href="<c:url value='/' />">My Closet</a></h1>&nbsp;&nbsp;&nbsp;
+                    <h1><a href="<c:url value='/' />">Enjoy Sports</a></h1>&nbsp;&nbsp;&nbsp;
                     <c:if test="${sessionScope.login_user != null}">
                         <c:if test="${sessionScope.login_user.admin_flag == 1}">
                             <a href="<c:url value='/users/index' />">ユーザー管理</a>&nbsp;
                         </c:if>
-                        <a href="<c:url value='/items/index' />">服管理</a>&nbsp;
                         <a href="<c:url value='/data?${sessionScope.login_user.id}' />">他のユーザー</a>&nbsp;
                     </c:if>
                 </div>

@@ -22,6 +22,21 @@ public class UserValidator {
             errors.add(email_error);
         }
 
+        String sport_error = validateSport(u.getSport());
+        if(!sport_error.equals("")) {
+            errors.add(sport_error);
+        }
+
+        String addres_error = validateAddres(u.getAddres());
+        if(!addres_error.equals("")) {
+            errors.add(addres_error);
+        }
+
+        String profile_error = validateProfile(u.getProfile());
+        if(!profile_error.equals("")) {
+            errors.add(profile_error);
+        }
+
         String password_error = validatePassword(u.getPassword(), passwordCheckFlag);
         if(!password_error.equals("")) {
             errors.add(password_error);
@@ -52,10 +67,34 @@ public class UserValidator {
         return "";
     }
 
-    // 氏名の必須入力チェック
+    // 項目の必須入力チェック
     private static String validateEmail(String email) {
         if(email == null || email.equals("")) {
             return "メールアドレスを入力してください。";
+        }
+
+        return "";
+    }
+
+    private static String validateSport(String sport) {
+        if(sport == null || sport.equals("")) {
+            return "好きなスポーツを入力してください。";
+        }
+
+        return "";
+    }
+
+    private static String validateAddres(String addres) {
+        if(addres == null || addres.equals("")) {
+            return "お住まいの都道府県を入力してください。";
+        }
+
+        return "";
+    }
+
+    private static String validateProfile(String profile) {
+        if(profile == null || profile.equals("")) {
+            return "プロフィールを入力してください。";
         }
 
         return "";

@@ -13,13 +13,8 @@
             </div>
         </c:if>
 
-
-
-
-        <Div Align="center">
-
-            <h1>衣類を購入する際に役立つ！</h1><br />
-            <h1>過去の衣類を管理、気になるアイテムの着心地を質問出来ます</h1>
+          <Div Align="center">
+            <h1>空き時間で身体を動かそう！</h1><br />
             <p><a href="<c:url value='/new/user' />">新規登録</a></p>
             <br /><br />
 

@@ -3,7 +3,6 @@ package controllers.toppage;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 import javax.persistence.TemporalType;
@@ -14,7 +13,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Item;
 import models.User;
 import utils.DBUtil;
 
@@ -58,25 +56,6 @@ public class TopPageIndexServlet extends HttpServlet {
         } catch(Exception e) {
             page = 1;
         }
-        List<Item> items = em.createNamedQuery("getMyAllItems", Item.class)
-                            .setParameter("user", login_user)
-                            .setFirstResult(15 * (page - 1))
-                            .setMaxResults(15)
-                            .getResultList();
-
-        long items_count = (long)em.createNamedQuery("getMyItemsCount", Long.class)
-                                    .setParameter("user", login_user)
-                                    .getSingleResult();
-
-        try{
-            long item_sum = (long)em.createNamedQuery("sumPrice", Long.class)
-                    .setParameter("user", login_user)
-                    .getSingleResult();
-            request.setAttribute("sum", item_sum);
-
-        } catch(Exception e) {
-            request.setAttribute("sum", 0);
-        }
 
         try {
             long dates = (long)em.createNamedQuery("getMonth", Long.class)
@@ -90,20 +69,10 @@ public class TopPageIndexServlet extends HttpServlet {
         }
 
 
-
-
-
-
-
         em.close();
 
-
-
-        request.setAttribute("items", items);
-        request.setAttribute("items_count", items_count);
         request.setAttribute("page", page);
         request.setAttribute("date", dt);
-
 
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));

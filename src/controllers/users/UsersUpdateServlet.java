@@ -71,6 +71,9 @@ public class UsersUpdateServlet extends HttpServlet {
             u.setAdmin_flag(Integer.parseInt(request.getParameter("admin_flag")));
             u.setUpdated_at(new Timestamp(System.currentTimeMillis()));
             u.setDelete_flag(0);
+            u.setAddres(request.getParameter("addres"));
+            u.setSport(request.getParameter("sport"));
+            u.setProfile(request.getParameter("profile"));
 
             List<String> errors = UserValidator.validate(u, userNameDuplicateCheckFlag, passwordCheckFlag);
             if(errors.size() > 0) {
