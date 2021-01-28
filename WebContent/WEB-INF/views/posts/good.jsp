@@ -13,7 +13,7 @@
             <table id="post_list">
             <tbody>
                 <tr>
-                    <th class="post_user_name">ユーザーネーム</th>
+                    <th class="post_name">ユーザーネーム</th>
                     <th class="post_date">日付</th>
                     <th class="post_title">タイトル</th>
                     <th class="post_action">操作</th>

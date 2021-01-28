@@ -21,7 +21,7 @@
                 </tr>
                 <c:forEach var="post" items="${posts}" varStatus="status">
                     <tr class="row${status.count % 2}">
-                        <td class="post_name"><c:out value="${post.user.name}" /></td>
+                        <td class="post_name"><c:out value="${post.user.user_name}" /></td>
                         <td class="post_date"><fmt:formatDate value='${post.post_date}' pattern='yyyy-MM-dd' /></td>
                         <td class="post_title">${post.title}</td>
                         <td class="post_action"><a href="<c:url value='/posts/show?id=${post.id}' />">詳細を見る</a></td>

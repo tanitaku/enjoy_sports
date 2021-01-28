@@ -22,15 +22,15 @@ import javax.persistence.Table;
         query = "SELECT p FROM Post AS p ORDER BY p.id DESC"
     ),
     @NamedQuery(
-        name = "getItemsCount",
+        name = "getPostsCount",
         query = "SELECT COUNT(p) FROM Post AS p"
     ),
     @NamedQuery(
-        name = "getMyAllItems",
+        name = "getMyAllPosts",
         query = "SELECT p FROM Post AS p WHERE p.user = :user ORDER BY p.id DESC"
         ),
     @NamedQuery(
-        name = "getMyItemsCount",
+        name = "getMyPostsCount",
         query = "SELECT COUNT(p) FROM Post AS p WHERE p.user = :user"
         ),
 

@@ -109,19 +109,19 @@ table#user_list2 th {
     padding: 10px 2%;
 }
 
-table#user_list2 .item_category {
+table#user_list2 .post_name {
     width: 20%;
     padding: 10px 2%;
 }
-table#user_list2 .item_date {
+table#user_list2 .post_date {
     width: 20%;
 }
 
-table#user_list2 .item_brand {
+table#user_list2 .post_title {
     width: 37%;
 }
 
-table#user_list2 .item_action {
+table#user_list2 .post_action {
     width: 13%;
 }
 
@@ -159,24 +159,24 @@ h1 a {
     color: #eeeeee;
 }
 
-table#item_list th {
+table#post_list th {
     font-weight: bold;
     padding: 10px 2%;
 }
 
-table#item_list .item_category {
+table#post_list .post_category {
     width: 20%;
     padding: 10px 2%;
 }
-table#item_list .item_date {
+table#post_list .post_date {
     width: 20%;
 }
 
-table#item_list .item_brand {
+table#post_list .post_brand {
     width: 37%;
 }
 
-table#item_list .item_action {
+table#post_list .post_action {
     width: 13%;
 }
 
@@ -189,24 +189,6 @@ pre {
 h3 {
     font-size: larger;
 }
-
-
-.images{
-    display: flex;
-    flex-wrap:wrap;
-}
-
-#imgindex img{
-    width: 30%;/*←画像を横に4つ並べる場合*/
-    padding:0 5px;/*←画像の左右に5pxの余白を入れる場合*/
-    box-sizing:border-box;
-    max-width:100%; /*画像のはみだしを防ぐ*/
-    height: auto; /*画像の縦横比を維持 */
-    border:solid 1px #ccc; /*←画像を1pxのグレーの枠線で囲む指定の場合*/
-    text-align: center;
-}
-
-
 
 #top {
     display: flex;

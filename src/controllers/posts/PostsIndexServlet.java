@@ -65,6 +65,7 @@ public class PostsIndexServlet extends HttpServlet {
         request.setAttribute("posts", posts);
         request.setAttribute("posts_count", posts_count);
         request.setAttribute("page", page);
+        request.setAttribute("login_user", login_user);
 
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));

@@ -1,8 +1,10 @@
 package controllers.posts;
 
 import java.io.IOException;
+import java.util.List;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -10,6 +12,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Comment;
 import models.Post;
 import models.User;
 import utils.DBUtil;
@@ -42,17 +45,14 @@ public class PostsShowServlet extends HttpServlet {
         User i2 = p.getUser();
 
 
+        // 質問者と回答者のデータがあれば、取得
+        try {
+           List<Comment> q = em.createNamedQuery("checkAnswer", Comment.class)
+                  .setParameter("answer", i2)
+                  .getResultList();
+           request.setAttribute("comment", q);
 
-
-
-//        // 質問者と回答者のデータがあれば、取得
-//        try {
-//           List<Comment> q = em.createNamedQuery("checkAnswer", Comment.class)
-//                  .setParameter("answer", i2)
-//                  .getResultList();
-//           request.setAttribute("comment", q);
-//
-//            } catch(NoResultException ex) {}
+            } catch(NoResultException ex) {}
 
         em.close();
 

@@ -54,7 +54,7 @@ public class TopPageIndexServlet extends HttpServlet {
                 .setMaxResults(15)
                .getResultList();
 
-        long posts_count = (long)em.createNamedQuery("getMyReportsCount", Long.class)
+        long posts_count = (long)em.createNamedQuery("getMyPostsCount", Long.class)
                      .setParameter("user", login_user)
                      .getSingleResult();
 
