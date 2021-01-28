@@ -16,7 +16,7 @@
             <tbody>
                 <tr>
                     <th>ユーザー名</th>
-                    <th>身長</th>
+                    <th>都道府県</th>
                     <th>フォロー</th>
                     <th>訪問</th>
                 </tr>
@@ -26,7 +26,7 @@
                            <c:out value="${user.user_name}" />
                         </td>
                         <td>
-                           <c:out value="${user.height}" />
+                           <c:out value="${user.addres}" />
                         </td>
                         <td>
                             <c:if test="${user.id != user_id}">
@@ -58,3 +58,4 @@
          </div>
           </c:param>
        </c:import>
+       <p><a href="<c:url value='/users/index' />">一覧に戻る</a></p>

@@ -1,4 +1,4 @@
-package controllers.posts;
+package controllers.follow;
 
 import java.io.IOException;
 import java.util.List;
@@ -11,21 +11,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import models.Post;
+import models.Relation;
 import models.User;
 import utils.DBUtil;
 
 /**
- * Servlet implementation class PostsIndexServlet
+ * Servlet implementation class UsersFollowerServlet
  */
-@WebServlet("/posts/index")
-public class PostsIndexServlet extends HttpServlet {
+@WebServlet("/follower")
+public class UsersFollowerServlet extends HttpServlet {
     private static final long serialVersionUID = 1L;
 
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public PostsIndexServlet() {
+    public UsersFollowerServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
@@ -38,39 +38,44 @@ public class PostsIndexServlet extends HttpServlet {
 
         EntityManager em = DBUtil.createEntityManager();
 
-        int page;
+        // 開くページ数を取得（デフォルトが1ページ目）
+        int page = 1;
         try {
             page = Integer.parseInt(request.getParameter("page"));
-        } catch(Exception e) {
-            page = 1;
-        }
+        } catch(NumberFormatException e) {}
 
 
-        User login_user = (User) request.getSession().getAttribute("login_user");
 
 
-        List<Post> posts = em.createNamedQuery("getAllPosts", Post.class)
-                        .setFirstResult(15 * (page - 1))
-                        .setMaxResults(15)
-                        .getResultList();
+        Relation test2 = new Relation();
+        test2.setFollower((User)request.getSession().getAttribute("login_user"));
+        User u = test2.getFollower();
 
-        long posts_count = (long)em.createNamedQuery("getPostsCount", Long.class)
-                        .getSingleResult();
+        // フォロワーを取得
+        List<Relation> fe = em.createNamedQuery("getMyAllFollowers", Relation.class)
+                .setParameter("follower", u)
+                .getResultList();
+
+
 
         em.close();
 
-        request.setAttribute("posts", posts);
-        request.setAttribute("posts_count", posts_count);
-        request.setAttribute("page", page);
-        request.setAttribute("login_user", login_user);
 
         if(request.getSession().getAttribute("flush") != null) {
             request.setAttribute("flush", request.getSession().getAttribute("flush"));
             request.getSession().removeAttribute("flush");
         }
 
-        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/posts/index.jsp");
+
+        // リクエストスコープに保存する
+        request.setAttribute("page", page);
+        request.setAttribute("user_id", u.getId());
+        request.setAttribute("fes", fe);
+
+
+        RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/users/follower.jsp");
         rd.forward(request, response);
+
     }
     }
 

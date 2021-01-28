@@ -3,7 +3,6 @@ package controllers.users;
 import java.io.IOException;
 import java.util.List;
 
-import javax.management.relation.Relation;
 import javax.persistence.EntityManager;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -12,6 +11,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import models.Relation;
 import models.User;
 import utils.DBUtil;
 
@@ -87,6 +87,7 @@ public class UsersDataServlet extends HttpServlet {
         request.setAttribute("users", users);
         request.setAttribute("page", page);
         request.setAttribute("user_id", u.getId());
+
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/users/data.jsp");
         rd.forward(request, response);
