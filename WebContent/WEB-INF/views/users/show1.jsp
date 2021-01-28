@@ -41,10 +41,6 @@
                     </tbody>
                 </table>
 
-                <h2>ユーザーのアイテム</h2>
-                <c:forEach var="item" items="${items}">
-                    <a href="<c:url value='/items/show?id=${item.id}' />"><img src="${item.path}" height=100px width=100px></a>
-                </c:forEach>
                 <p><a href="<c:url value='/users/edit?id=${user.id}' />">このユーザー情報を編集する</a></p>
             </c:when>
             <c:otherwise>
