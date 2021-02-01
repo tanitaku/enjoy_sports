@@ -1,53 +1,34 @@
-# Name Enjoy-Sports
+# Enjoy-Sports
  
 こちらはスポーツをしたい方や身体を動かしたい方々をつなげるサイトです。
+
+テストユーザー　　　　　　　
+ユーザー名　test1
+パスワード　1111
  
 
 # 構成
 
  <img src="https://user-images.githubusercontent.com/71134061/106419014-da96f700-649a-11eb-93bf-50f4aac2ed18.png">
+ <img src="https://user-images.githubusercontent.com/71134061/106419233-5f821080-649b-11eb-9dc0-095f390ad509.png">
  
  
+# サイトURL
  
-# Features
+https://enjoy-sports.herokuapp.com/
  
-"hoge"のセールスポイントや差別化などを説明する
+# 主な機能
+<ul>
+ <li>ユーザー(user), ポスト(post), のCRUD</li>
+ <li>ログイン、ログアウト、新規登録</li>
+ <li>ユーザーフォロー機能</li>
+ <li>コメント機能</li>
+ <li>都道府県名検索機能</li>
+ <li>管理者機能（ユーザーの追加・編集・削除）</li>
+</ul> 
  
-# Requirement
+# 使用技術
  
-"hoge"を動かすのに必要なライブラリなどを列挙する
+
  
-* huga 3.5.2
-* hogehuga 1.0.2
- 
-# Installation
- 
-Requirementで列挙したライブラリなどのインストール方法を説明する
- 
-```bash
-pip install huga_package
-```
- 
-# Usage
- 
-DEMOの実行方法など、"hoge"の基本的な使い方を説明する
- 
-```bash
-git clone https://github.com/hoge/~
-cd examples
-python demo.py
-```
- 
-# Note
- 
-注意点などがあれば書く
- 
-# Author
- 
-作成情報を列挙する
- 
-* 作成者
-* 所属
-* E-mail
- 
-# License
+
