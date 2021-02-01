@@ -14,7 +14,7 @@
         </c:if>
 
           <Div Align="center">
-            <h1>空き時間で身体を動かそう！</h1><br />
+            <h1>スポーツ仲間を見つけよう！</h1><br />
             <p><a href="<c:url value='/new/user' />">新規登録</a></p>
             <br /><br />
 

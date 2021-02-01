@@ -45,14 +45,14 @@ public class PostsIndexServlet extends HttpServlet {
             page = 1;
         }
 
+        List<Post> posts = em.createNamedQuery("getAllPosts", Post.class)
+                .setFirstResult(15 * (page - 1))
+                .setMaxResults(15)
+                .getResultList();
+
 
         User login_user = (User) request.getSession().getAttribute("login_user");
 
-
-        List<Post> posts = em.createNamedQuery("getAllPosts", Post.class)
-                        .setFirstResult(15 * (page - 1))
-                        .setMaxResults(15)
-                        .getResultList();
 
         long posts_count = (long)em.createNamedQuery("getPostsCount", Long.class)
                         .getSingleResult();

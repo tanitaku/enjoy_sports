@@ -13,32 +13,19 @@
         <table id="post_list">
             <tbody>
                 <tr>
-                    <th class="post_name">氏名</th>
+                    <th class="post_name">ユーザーネーム</th>
                     <th class="post_date">日付</th>
                     <th class="post_title">タイトル</th>
                     <th class="post_action">操作</th>
                 </tr>
                 <c:forEach var="post" items="${posts}" varStatus="status">
-                 <tr class="row${status.count % 2}">
-                    <c:forEach var="feses" items="${fes}">
-                            <c:if test="${post.user.id  == feses.id}">
-                                <tr class="row${status.count % 2}">
-                                    <td class="post_name"><c:out value="${post.user.name}" /></td>
-                                    <td class="post_date"><fmt:formatDate value='${post.post_date}' pattern='yyyy-MM-dd' /></td>
-                                    <td class="post_title">${post.title}</td>
-                                    <td class="post_action"><a href="<c:url value='/posts/show?id=${post.id}' />">詳細を見る</a></td>
-                                </tr>
-                            </c:if>
-                    </c:forEach>
-                            <c:if test="${login_user.id == post.user.id}">
-                                <tr class="row${status.count % 2}">
+                            <tr class="row${status.count % 2}">
                                     <td class="post_name"><c:out value="${post.user.user_name}" /></td>
                                     <td class="post_date"><fmt:formatDate value='${post.post_date}' pattern='yyyy-MM-dd' /></td>
                                     <td class="post_title">${post.title}</td>
                                     <td class="post_action"><a href="<c:url value='/posts/show?id=${post.id}' />">詳細を見る</a></td>
-                                </tr>
-                            </c:if>
-                </c:forEach>
+                            </tr>
+                 </c:forEach>
             </tbody>
         </table>
 

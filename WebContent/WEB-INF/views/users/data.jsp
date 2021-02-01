@@ -9,16 +9,59 @@
             </div>
          </c:if>
 
-         <h2>ユーザー　一覧</h2>
+         <h2>ユーザー　一覧</h2>&nbsp;
+         <a href="<c:url value='/follower' />" class="btn btn--orange">フォロワー</a>>&nbsp;&nbsp;
 
-         <a href="<c:url value='/follower' />" class="btn btn--orange">フォロワー</a>>
+            <form method="Post" action="<c:url value='/search/user' />" class="search_container">
+              <input type="text" name="addres" size="25" placeholder="都道府県検索">
+              <input type="submit" value="検索">
+            </form>&nbsp;&nbsp;
+
+            <c:if test="${ad != null}">
+                <table id="user_list2">
+                    <tbody>
+                        <tr>
+                            <th>ユーザー名</th>
+                            <th>都道府県</th>
+                            <th>フォロー</th>
+                            <th>詳細</th>
+                        </tr>
+                        <c:forEach var="user" items="${ad}">
+                            <tr class="row${status.count % 2}">
+                                <td>
+                                   <c:out value="${user.user_name}" />
+                                </td>
+                                <td>
+                                   <c:out value="${user.addres}" />
+                                </td>
+                                 <td>
+                                    <c:if test="${user.id != user_id}">
+                                        <a href="<c:url value='/follow?id=${user.id}' />">フォローする</a>
+                                    </c:if>
+                               </td>
+                               <td>
+                                    <c:if test="${user.id != user_id}">
+                                <a href="<c:url value='/profile/show?id=${user.id}' />">詳細</a>
+                                    </c:if>
+                               </td>
+                            </tr>
+                        </c:forEach>
+                    </tbody>
+                  </table>
+
+                    <div id="pagination">
+                        （全 ${search_count} 人) <br />
+                    </div>
+            </c:if>
+
+        <c:if test="${ad == null}">
          <table id="user_list2">
             <tbody>
                 <tr>
                     <th>ユーザー名</th>
                     <th>都道府県</th>
                     <th>フォロー</th>
-                    <th>訪問</th>
+                    <th>詳細</th>
                 </tr>
                 <c:forEach var="user" items="${users}">
                     <tr class="row${status.count % 2}">
@@ -35,13 +78,14 @@
                        </td>
                        <td>
                             <c:if test="${user.id != user_id}">
-                        <a href="<c:url value='/other/user/items?id=${user.id}' />">訪問</a>
+                        <a href="<c:url value='/profile/show?id=${user.id}' />">詳細</a>
                             </c:if>
                        </td>
                     </tr>
                 </c:forEach>
             </tbody>
           </table>
+
 
           <div id="pagination">
             （全 ${users_count} 人) <br />
@@ -56,6 +100,7 @@
             </c:choose>
          </c:forEach>
          </div>
+       </c:if>
           </c:param>
        </c:import>
        <p><a href="<c:url value='/users/index' />">一覧に戻る</a></p>

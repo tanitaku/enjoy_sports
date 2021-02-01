@@ -43,6 +43,7 @@
                 </c:choose>
             </c:forEach>
         </div>
+        <a href="<c:url value='/profile/show?id=${login_user}' />">マイプロフィール</a>
         <p><a href="<c:url value='/posts/new' />">新規ポストの投稿</a></p>
     </c:param>
 </c:import>

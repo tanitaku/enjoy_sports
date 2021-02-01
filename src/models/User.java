@@ -33,6 +33,14 @@ import javax.persistence.Table;
     @NamedQuery(
             name = "getMyFollower",
             query = "SELECT u FROM User AS u WHERE u.id = :id"
+            ),
+    @NamedQuery(
+            name = "userSearch",
+            query = "SELECT u FROM User AS u WHERE u.addres LIKE :addres"
+            ),
+    @NamedQuery(
+            name = "searchResult",
+            query = "SELECT COUNT(u) FROM User AS u WHERE u.addres LIKE :addres"
             )
 })
 @Entity

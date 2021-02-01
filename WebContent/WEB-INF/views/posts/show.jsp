@@ -61,7 +61,6 @@
                             <p><input type="submit" value="送信"></p>
                          </form>
 
-                         <p>いいね <c:out value="${goods}" />件</p>
                          <p><a href="<c:url value="/posts/edit?id=${post.id}" />">アイテム情報を編集する</a></p>
                          <form method="POST" action="<c:url value='/posts/destroy?id=${post.id}"' />">
                              <input type="hidden" name="_token" value="${_token}" />
@@ -84,10 +83,6 @@
                         <textarea name="comment" rows="5" cols="40" placeholder="${post.user.user_name}さんへ"></textarea>
                         </p>
                         <p><input type="submit" value="送信"></p>
-                    </form>
-
-                    <form method="POST" action="<c:url value='/posts/good?id=${post.id}' />">
-                        <button type="submit" name="good">いいね</button>
                     </form>
 
                     <c:if test="${sessionScope.login_user.id == post.user.id}">

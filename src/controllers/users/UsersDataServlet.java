@@ -55,7 +55,7 @@ public class UsersDataServlet extends HttpServlet {
         try {
         long users_count = (long)em.createNamedQuery("getUsersCount", Long.class)
                                         .getSingleResult();
-        request.setAttribute("users_count", users_count);
+            request.setAttribute("users_count", users_count);
         } catch(Exception e) {
             request.setAttribute("users_count", 0);
         }
@@ -63,7 +63,6 @@ public class UsersDataServlet extends HttpServlet {
         Relation test = new Relation();
         test.setFollower((User)request.getSession().getAttribute("login_user"));
         User u = test.getFollower();
-
 
         try {
         List<Relation> fe = em.createNamedQuery("getMyAllFollowers", Relation.class)
@@ -82,11 +81,22 @@ public class UsersDataServlet extends HttpServlet {
             request.getSession().removeAttribute("flush");
         }
 
+        // 検索されている場合は結果を表示
+        if(request.getSession().getAttribute("addres") != null) {
+            request.setAttribute("ad", request.getSession().getAttribute("addres"));
+            request.getSession().removeAttribute("addres");
+
+            request.setAttribute("search_count", request.getSession().getAttribute("search_count"));
+            request.getSession().removeAttribute("search_count");
+            request.setAttribute("user_id", u.getId());
+
+        }else {
 
         // リクエストスコープに保存する
         request.setAttribute("users", users);
         request.setAttribute("page", page);
         request.setAttribute("user_id", u.getId());
+        }
 
 
         RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/views/users/data.jsp");

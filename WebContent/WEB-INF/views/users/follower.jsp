@@ -15,8 +15,8 @@
             <tbody>
                 <tr>
                     <th>ユーザー名</th>
-                    <th>身長</th>
-                    <th>訪問</th>
+                    <th>都道府県</th>
+                    <th>プロフィール</th>
                 </tr>
                 <c:forEach var="feses" items="${fes}">
                     <tr class="row${status.count % 2}">
@@ -24,10 +24,10 @@
                            <c:out value="${feses.followered.user_name}" />
                         </td>
                         <td>
-                           <c:out value="${feses.followered.height}" />
+                           <c:out value="${feses.followered.addres}" />
                         </td>
                        <td>
-                        <c:out value="訪問" />
+                           <a href="<c:url value='/profile/show?id=${feses.followered.id}' />">詳細</a>
                        </td>
                     </tr>
                 </c:forEach>

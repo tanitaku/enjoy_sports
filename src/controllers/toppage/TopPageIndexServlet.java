@@ -72,6 +72,7 @@ public class TopPageIndexServlet extends HttpServlet {
 
         request.setAttribute("posts_count", posts_count);
         request.setAttribute("posts", posts);
+        request.setAttribute("login_user", login_user.getId());
         request.setAttribute("page", page);
         request.setAttribute("date", dt);
 
