@@ -61,10 +61,10 @@
                             <p><input type="submit" value="送信"></p>
                          </form>
 
-                         <p><a href="<c:url value="/posts/edit?id=${post.id}" />">アイテム情報を編集する</a></p>
+                         <p><a href="<c:url value="/posts/edit?id=${post.id}" />">ポストを編集する</a></p>
                          <form method="POST" action="<c:url value='/posts/destroy?id=${post.id}"' />">
                              <input type="hidden" name="_token" value="${_token}" />
-                             <button type="submit">アイテム情報を削除する</button>
+                             <button type="submit">ポストを削除する</button>
                          </form>
                     </c:when>
                 <c:otherwise>
@@ -86,10 +86,10 @@
                     </form>
 
                     <c:if test="${sessionScope.login_user.id == post.user.id}">
-                        <p><a href="<c:url value="/posts/edit?id=${post.id}" />">アイテム情報を編集する</a></p>
+                        <p><a href="<c:url value="/posts/edit?id=${post.id}" />">ポストを編集する</a></p>
                             <form method="POST" action="<c:url value='/posts/destroy?id=${post.id}"' />">
                                 <input type="hidden" name="_token" value="${_token}" />
-                                <button type="submit">アイテム情報を削除する</button>
+                                <button type="submit">ポストを削除する</button>
                             </form>
                     </c:if>
                 </c:otherwise>
