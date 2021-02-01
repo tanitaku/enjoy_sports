@@ -8,14 +8,14 @@
 		<class>models.Relation</class>
 		<properties>
 			<property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver"/>
-			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://us-cdbr-east-03.cleardb.com/heroku_e81d04198de766d?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
+			<property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/enjoy_sports?useSSL=false&amp;useUnicode=true&amp;characterEncoding=utf8"/>
 			<property name="hibernate.dialect" value="org.hibernate.dialect.MySQL5Dialect"/>
 			<property name="hibernate.show_sql" value="true"/>
 			<property name="hibernate.format_sql" value="true"/>
-			<property name="javax.persistence.jdbc.user" value="b95c543ca2e028"/>
-			<property name="javax.persistence.jdbc.password" value="c6ee487f"/>
-			<property name="javax.persistence.schema-generation.database.action" value="none"/>
+			<property name="javax.persistence.schema-generation.database.action" value="create"/>
 			<property name="javax.persistence.schema-generation.scripts.action" value="none"/>
+			<property name="javax.persistence.jdbc.user" value="repuser"/>
+			<property name="javax.persistence.jdbc.password" value="reppass"/>
 		</properties>
 	</persistence-unit>
 </persistence>

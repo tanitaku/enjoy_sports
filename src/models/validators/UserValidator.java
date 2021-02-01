@@ -60,7 +60,7 @@ public class UserValidator {
                                              .getSingleResult();
             em.close();
             if(user_count > 0) {
-                return "入力されたユーザー名の情報はすでに存在しています。";
+                return "入力されたユーザー名はすでに存在しています。";
             }
         }
 

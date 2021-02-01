@@ -45,10 +45,10 @@ public class PostsDestroyServlet extends HttpServlet {
                     em.remove(p);
                     em.getTransaction().commit();
                     em.close();
-                    request.getSession().setAttribute("flush", "アイテムを削除しました。");
+                    request.getSession().setAttribute("flush", "ポストを削除しました。");
                 } else {
                     em.close();
-                    request.getSession().setAttribute("flush", "アイテムが存在しません。");
+                    request.getSession().setAttribute("flush", "ポストが存在しません。");
                 }
 
             response.sendRedirect(request.getContextPath() + "/posts/index");

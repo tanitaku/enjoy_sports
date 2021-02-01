@@ -20,6 +20,7 @@
                         </c:if>
                         <a href="<c:url value='/data?${sessionScope.login_user.id}' />">他のユーザー</a>&nbsp;
                         <a href="<c:url value='/posts/index' />">ポスト</a>&nbsp;
+                        <a href="<c:url value='/profile/show?id=${login_user}' />">マイプロフィール</a>&nbsp;
                     </c:if>
                 </div>
                 <c:if test="${sessionScope.login_user != null}">

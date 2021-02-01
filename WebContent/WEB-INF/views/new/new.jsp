@@ -2,6 +2,14 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <c:import url="../layout/app.jsp">
     <c:param name="content">
+        <c:if test="${errors != null}">
+            <div id="flush_error">
+                入力内容にエラーがあります。<br />
+                    <c:forEach var="error" items="${errors}">
+                        ・<c:out value="${error}" /><br />
+                    </c:forEach>
+            </div>
+        </c:if>
         <h2>ユーザー　新規登録ページ</h2>
 
         <form method="POST" action="<c:url value='/new/create' />" >
@@ -22,7 +30,7 @@
             <br /><br />
 
             <label for="profile">プロフィール欄</label><br />
-            <textarea name="profile" rows="10" cols="50">${item.profile}</textarea>
+            <textarea name="profile" rows="10" cols="50">${user.profile}</textarea>
             <br /><br />
 
             <label for="password">パスワード</label><br />

@@ -26,7 +26,7 @@
 <br /><br />
 
 <label for="profile">プロフィール欄</label><br />
-<textarea name="profile" rows="10" cols="50">${item.profile}</textarea>
+<textarea name="profile" rows="10" cols="50">${user.profile}</textarea>
 <br /><br />
 
 <label for="password">パスワード</label><br />
