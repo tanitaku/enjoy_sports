@@ -28,7 +28,11 @@ https://enjoy-sports.herokuapp.com/
 </ul> 
  
 # 使用技術
- 
-
+<ul>
+ <li>言語：Java、SQL</li>
+ <li>DB：MySQL</li>
+ <li>AP：Tomcat</li>
+ <li>開発環境：Eclipse</li>
+</ul>
  
 
