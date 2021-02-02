@@ -9,8 +9,12 @@
 
 # 構成
 
+ER図
  <img src="https://user-images.githubusercontent.com/71134061/106419014-da96f700-649a-11eb-93bf-50f4aac2ed18.png">
- <img src="https://user-images.githubusercontent.com/71134061/106419233-5f821080-649b-11eb-9dc0-095f390ad509.png">
+ 
+ 
+サイトマップ
+ <img src="https://user-images.githubusercontent.com/71134061/106555420-e2b96a00-6560-11eb-8b50-53657b4359ce.png">
  
  
 # サイトURL
