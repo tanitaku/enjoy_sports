@@ -32,6 +32,8 @@ https://enjoy-sports.herokuapp.com/
 </ul> 
 
 # ユーザー機能
+ポスト詳細では、内容に対してコメントで質問をすることが出来ます。
+<img src="https://user-images.githubusercontent.com/71134061/106556787-aafff180-6563-11eb-8e95-31d33195e0e4.png">
 
  
 # 管理者機能
