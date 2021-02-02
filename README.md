@@ -28,7 +28,7 @@ https://enjoy-sports.herokuapp.com/
 </ul> 
  
 # 管理者機能
-<img src="https://user-images.githubusercontent.com/71134061/106554451-c0265180-655e-11eb-8ffa-f985f46b7324.png">
+<img src="https://user-images.githubusercontent.com/71134061/106554861-96215f00-655f-11eb-8545-96c6c2d22d64.png">
 <img src="https://user-images.githubusercontent.com/71134061/106554574-04b1ed00-655f-11eb-9add-24f133bf744e.png">
  
 # 使用技術
