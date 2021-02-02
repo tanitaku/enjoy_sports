@@ -27,6 +27,9 @@ https://enjoy-sports.herokuapp.com/
  <li>管理者機能（ユーザーの追加・編集・削除）</li>
 </ul> 
  
+# 管理者機能
+<img src="https://user-images.githubusercontent.com/71134061/106554451-c0265180-655e-11eb-8ffa-f985f46b7324.png">
+ 
 # 使用技術
 <ul>
  <li>言語：Java、SQL</li>
