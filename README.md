@@ -32,7 +32,10 @@ https://enjoy-sports.herokuapp.com/
 </ul> 
  
 # 管理者機能
+管理者のみユーザー管理メニューを表示し、ユーザー情報を全て管理することが出来る。（削除、詳細、登録、）
 <img src="https://user-images.githubusercontent.com/71134061/106554861-96215f00-655f-11eb-8545-96c6c2d22d64.png">
+
+削除されたユーザーの情報も見ることが出来る。
 <img src="https://user-images.githubusercontent.com/71134061/106554865-991c4f80-655f-11eb-8c04-f1a2b5fc3cf0.png">
  
 # 使用技術
