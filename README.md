@@ -9,11 +9,11 @@
 
 # 構成
 
-ER図
+<h2>ER図</h2>
  <img src="https://user-images.githubusercontent.com/71134061/106419014-da96f700-649a-11eb-93bf-50f4aac2ed18.png">
  
  
-サイトマップ
+<h2>サイトマップ</h2>
  <img src="https://user-images.githubusercontent.com/71134061/106555420-e2b96a00-6560-11eb-8b50-53657b4359ce.png">
  
  
