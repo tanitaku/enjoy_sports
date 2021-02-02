@@ -35,6 +35,9 @@ https://enjoy-sports.herokuapp.com/
 ポスト詳細では、内容に対してコメントで質問をすることが出来ます。
 <img src="https://user-images.githubusercontent.com/71134061/106556787-aafff180-6563-11eb-8e95-31d33195e0e4.png">
 
+他のユーザーを一覧で表示し、都道府県名で検索出来ます。
+<img src="https://user-images.githubusercontent.com/71134061/106556785-a89d9780-6563-11eb-9a05-12f99545dd93.png">
+
  
 # 管理者機能
 管理者のみユーザー管理メニューを表示し、ユーザー情報を全て管理することが出来る。（削除、詳細、登録、）
